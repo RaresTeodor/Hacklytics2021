@@ -28,8 +28,8 @@ class FirstPage extends StatelessWidget {
                         autofocus: false,
                         decoration: InputDecoration(
                             icon: Icon(Icons.people),
-                            hintText: "Enter your password",
-                            labelText: "Password *"),
+                            hintText: "Enter your fighter",
+                            labelText: "Figher A"),
                         //autofillHints: names,
                       ),
                       width: 400,
