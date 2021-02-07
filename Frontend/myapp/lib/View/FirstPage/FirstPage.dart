@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'MatchResultPage.dart';
+import 'Repository.dart';
 
 class FirstPage extends StatelessWidget {
   @override
+  var fighter_1 = TextEditingController();
+  var fighter_2 = TextEditingController();
+
   Widget build(BuildContext context) {
+    Repository data = new Repository();
     // List<String> names = () {
     //   HttpRequest.getString('127.0.0.1/names')
     //       .then((result) => {result.split("\n,")});
@@ -20,7 +25,7 @@ class FirstPage extends StatelessWidget {
                 //name
                 Container(
                   child: TextFormField(
-                    controller: TextEditingController(),
+                    controller: fighter_1,
                     autofocus: false,
                     decoration: InputDecoration(
                         icon: Icon(Icons.people),
@@ -47,6 +52,9 @@ class FirstPage extends StatelessWidget {
                     margin: EdgeInsets.only(bottom: 50),
                     child: ElevatedButton(
                       onPressed: () {
+                        Repository.data.add(fighter_1.text);
+                        Repository.data.add(fighter_2.text);
+
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -71,7 +79,7 @@ class FirstPage extends StatelessWidget {
                 //name
                 Container(
                   child: TextFormField(
-                    controller: TextEditingController(),
+                    controller: fighter_2,
                     autofocus: false,
                     decoration: InputDecoration(
                         icon: Icon(Icons.people),
