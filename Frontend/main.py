@@ -5,12 +5,6 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-
-class Item(BaseModel):
-    name: str
-    price: float
-    is_offer: Optional[bool] = None
-
 class Fighter(BaseModel):
     first_name: str
     last_name: str
