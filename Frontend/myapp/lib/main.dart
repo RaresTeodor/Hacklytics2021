@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Future UFC",
-      home: Scaffold(body: FirstPage()),
+      home: Material(child: FirstPage()),
     );
   }
 }

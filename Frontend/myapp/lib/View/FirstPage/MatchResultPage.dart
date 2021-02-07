@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'Ranking.dart';
-import 'MatchResultTable.dart';
 
 class MatchResultPage extends StatelessWidget {
   var stil = TextStyle(
@@ -8,12 +7,13 @@ class MatchResultPage extends StatelessWidget {
       fontWeight: FontWeight.w800,
       fontFamily: 'Roboto',
       letterSpacing: 0.5,
-      fontSize: 20);
+      fontSize: 20,
+      decoration: TextDecoration.none);
   @override
   Widget build(BuildContext context) {
     return new Container(
       color: Colors.blueGrey,
-      child: Center(
+      child: Container(
         child: Column(
           children: [
             Container(
@@ -53,17 +53,50 @@ class MatchResultPage extends StatelessWidget {
                 Column(
                   children: [
                     Container(
-                      padding: EdgeInsets.only(top: 50),
                       child: Text("Randy Orton", style: stil),
                     ),
                     Container(
-                        margin: EdgeInsets.all(30),
-                        padding: EdgeInsets.only(right: 100),
                         child:
                             Image.asset('assets/images/randy.png', scale: 3.0))
                   ],
                 ),
-                Column()
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.all(20),
+                      child: Table(
+                        defaultColumnWidth: FixedColumnWidth(120.0),
+                        border: TableBorder.all(
+                            color: Colors.black,
+                            style: BorderStyle.solid,
+                            width: 2),
+                        children: [
+                          TableRow(children: [
+                            Column(children: [Text('Stats', style: stil)]),
+                            Column(children: [Text('Nume1', style: stil)]),
+                            Column(children: [Text('Nume2', style: stil)]),
+                          ]),
+                          TableRow(children: [
+                            Column(children: [Text('Javatpoint', style: stil)]),
+                            Column(children: [Text('Flutter', style: stil)]),
+                            Column(children: [Text('5*', style: stil)]),
+                          ]),
+                          TableRow(children: [
+                            Column(children: [Text('Javatpoint', style: stil)]),
+                            Column(children: [Text('MySQL', style: stil)]),
+                            Column(children: [Text('5*', style: stil)]),
+                          ]),
+                          TableRow(children: [
+                            Column(children: [Text('Javatpoint', style: stil)]),
+                            Column(children: [Text('ReactJS', style: stil)]),
+                            Column(children: [Text('5*', style: stil)]),
+                          ]),
+                        ],
+                      ),
+                    ),
+                  ],
+                )
               ],
             )),
           ],
