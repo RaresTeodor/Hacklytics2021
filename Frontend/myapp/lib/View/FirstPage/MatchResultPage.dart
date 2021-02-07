@@ -10,6 +10,16 @@ class MatchResultPage extends StatelessWidget {
       letterSpacing: 0.5,
       fontSize: 20,
       decoration: TextDecoration.none);
+
+  var elevated_style = ElevatedButton.styleFrom(
+      primary: Colors.black,
+      onPrimary: Colors.grey,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(25))),
+      textStyle: TextStyle(
+        color: Colors.white,
+        fontSize: 40,
+      ));
   @override
   Widget build(BuildContext context) {
     return new Container(
@@ -18,7 +28,7 @@ class MatchResultPage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-                padding: EdgeInsets.all(50),
+                padding: EdgeInsets.only(top: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -30,84 +40,53 @@ class MatchResultPage extends StatelessWidget {
                           child: Text('Simulate another fight', style: stil)),
                     ),
                     Container(
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 150.0, right: 0.0),
-                          child: RaisedButton(
-                            textColor: Colors.white,
-                            color: Colors.black,
-                            child: Text("Ranking"),
-                            shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(30.0),
-                            ),
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Ranking()));
-                            },
-                          )),
-                    )
+                      child: Image.asset(
+                        'assets/winner.png',
+                        scale: 1,
+                      ),
+                    ),
+                    Container(
+                        child: ElevatedButton(
+                      style: elevated_style,
+                      child: Text("Ranking"),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Ranking()));
+                      },
+                    )),
                   ],
                 )),
             Container(
-              child: Image.asset(
-                'assets/winner.png',
-                scale: 1.5,
-              ),
-            ),
-            Container(
+                padding: EdgeInsets.only(top: 100),
                 child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Column(
-                  children: [
-                    Container(
-                      child: Text("Randy Orton", style: stil),
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Column(
+                      children: [
+                        Container(
+                          child: Text("Randy Orton", style: stil),
+                        ),
+                        Stack(
+                          children: <Widget>[
+                            Container(
+                              child: Image.asset('assets/background.png',
+                                  scale: 0.8),
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(top: 20),
+                              child: Image.asset('assets/images/randy.png',
+                                  scale: 2.0),
+                            ),
+                          ],
+                        )
+                      ],
                     ),
-                    Container(
-                        child:
-                            Image.asset('assets/images/randy.png', scale: 3.0))
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [Container()],
+                    )
                   ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.all(20),
-                      child: Table(
-                        defaultColumnWidth: FixedColumnWidth(120.0),
-                        border: TableBorder.all(
-                            color: Colors.black,
-                            style: BorderStyle.solid,
-                            width: 2),
-                        children: [
-                          TableRow(children: [
-                            Column(children: [Text('Stats', style: stil)]),
-                            Column(children: [Text('Nume1', style: stil)]),
-                            Column(children: [Text('Nume2', style: stil)]),
-                          ]),
-                          TableRow(children: [
-                            Column(children: [Text('Javatpoint', style: stil)]),
-                            Column(children: [Text('Flutter', style: stil)]),
-                            Column(children: [Text('5*', style: stil)]),
-                          ]),
-                          TableRow(children: [
-                            Column(children: [Text('Javatpoint', style: stil)]),
-                            Column(children: [Text('MySQL', style: stil)]),
-                            Column(children: [Text('5*', style: stil)]),
-                          ]),
-                          TableRow(children: [
-                            Column(children: [Text('Javatpoint', style: stil)]),
-                            Column(children: [Text('ReactJS', style: stil)]),
-                            Column(children: [Text('5*', style: stil)]),
-                          ]),
-                        ],
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            )),
+                )),
           ],
         ),
       ),
