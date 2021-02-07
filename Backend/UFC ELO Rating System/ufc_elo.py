@@ -91,7 +91,7 @@ def computeELO():
 def buildCSV():
         header.append("R_rating")
         header.append("B_rating")
-        with open('ufc_final.csv', mode='w', newline='') as ufc_final:
+        with open('../ufc_final.csv', mode='w', newline='') as ufc_final:
                 ufc_writer = csv.writer(ufc_final)
                 ufc_writer.writerow(header)
                 for row in history:
