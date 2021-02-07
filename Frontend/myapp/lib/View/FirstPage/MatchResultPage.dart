@@ -64,7 +64,7 @@ class MatchResultPage extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.only(right: 160),
                       child: Image.asset(
-                        'assets/' + winner,
+                        'assets/images/' + winner,
                         scale: 1,
                       ),
                     ),
