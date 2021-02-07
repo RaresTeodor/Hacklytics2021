@@ -3,8 +3,6 @@ import 'dart:html';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-// import 'package:myapp/View/FirstPage/MatchResultTable.dart';
-
 class Ranking extends StatelessWidget {
   @override
   var nume = ["Randy Orton", "Edge", "John Cena", "Batista"];

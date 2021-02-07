@@ -1,14 +1,21 @@
-import 'package:flutter/material.dart';
+import 'dart:html';
 
+import 'package:flutter/material.dart';
 import 'Ranking.dart';
+import 'FirstPage.dart';
 
 class MatchResultPage extends StatelessWidget {
   var stil = TextStyle(
       color: Colors.black,
-      fontWeight: FontWeight.w800,
-      fontFamily: 'Roboto',
-      letterSpacing: 0.5,
-      fontSize: 20,
+      fontFamily: 'WWE',
+      letterSpacing: 2,
+      fontSize: 50,
+      decoration: TextDecoration.none);
+  var stil_2 = TextStyle(
+      color: Colors.white,
+      fontFamily: 'WWE',
+      letterSpacing: 3,
+      fontSize: 30,
       decoration: TextDecoration.none);
 
   var elevated_style = ElevatedButton.styleFrom(
@@ -33,13 +40,18 @@ class MatchResultPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Container(
-                      child: TextButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          child: Text('Simulate another fight', style: stil)),
-                    ),
+                        child: ElevatedButton(
+                      style: elevated_style,
+                      child: Text(
+                        "Simulate another fight!",
+                        style: stil_2,
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    )),
                     Container(
+                      padding: EdgeInsets.only(right: 200),
                       child: Image.asset(
                         'assets/winner.png',
                         scale: 1,
@@ -48,7 +60,7 @@ class MatchResultPage extends StatelessWidget {
                     Container(
                         child: ElevatedButton(
                       style: elevated_style,
-                      child: Text("Ranking"),
+                      child: Text("Ranking", style: stil_2),
                       onPressed: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) => Ranking()));
@@ -63,9 +75,7 @@ class MatchResultPage extends StatelessWidget {
                   children: <Widget>[
                     Column(
                       children: [
-                        Container(
-                          child: Text("Randy Orton", style: stil),
-                        ),
+                        Container(child: Text("Randy Orton", style: stil)),
                         Stack(
                           children: <Widget>[
                             Container(
@@ -73,7 +83,7 @@ class MatchResultPage extends StatelessWidget {
                                   scale: 0.8),
                             ),
                             Container(
-                              padding: EdgeInsets.only(top: 20),
+                              padding: EdgeInsets.only(top: 80),
                               child: Image.asset('assets/images/randy.png',
                                   scale: 2.0),
                             ),
@@ -81,10 +91,6 @@ class MatchResultPage extends StatelessWidget {
                         )
                       ],
                     ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [Container()],
-                    )
                   ],
                 )),
           ],
