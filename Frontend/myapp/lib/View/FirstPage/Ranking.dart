@@ -19,16 +19,22 @@ class Ranking extends StatelessWidget {
   var stil = TextStyle(
       color: Colors.black,
       fontWeight: FontWeight.w800,
-      fontFamily: 'Roboto',
+      fontFamily: 'Bebas',
       letterSpacing: 0.5,
-      fontSize: 20,
+      fontSize: 25,
       decoration: TextDecoration.none);
   var stil_2 = TextStyle(
       color: Colors.white,
+      fontFamily: 'Bebas',
+      letterSpacing: 2,
+      fontSize: 30,
+      decoration: TextDecoration.none);
+  var stil_3 = TextStyle(
+      color: Colors.black,
       fontWeight: FontWeight.w800,
-      fontFamily: 'Roboto',
+      fontFamily: 'Bebas',
       letterSpacing: 0.5,
-      fontSize: 20,
+      fontSize: 60,
       decoration: TextDecoration.none);
 
   Widget build(BuildContext context) {
@@ -62,7 +68,7 @@ class Ranking extends StatelessWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text("Ranking", style: stil),
+          Text("Ranking", style: stil_3),
           Container(
               width: 150.0,
               height: 50.0,

@@ -3,6 +3,19 @@ import 'MatchResultPage.dart';
 import 'Ranking.dart';
 
 class FirstPage extends StatelessWidget {
+  var stil = TextStyle(
+      fontWeight: FontWeight.w800,
+      fontFamily: 'Bebas',
+      letterSpacing: 0.5,
+      fontSize: 25,
+      decoration: TextDecoration.none);
+  var stil_2 = TextStyle(
+      color: Colors.white,
+      fontWeight: FontWeight.w800,
+      fontFamily: 'Bebas',
+      letterSpacing: 0.5,
+      fontSize: 25,
+      decoration: TextDecoration.none);
   @override
   Widget build(BuildContext context) {
     // List<String> names = () {
@@ -26,12 +39,13 @@ class FirstPage extends StatelessWidget {
                     autofocus: false,
                     decoration: InputDecoration(
                         icon: Icon(Icons.people),
-                        hintText: "Enter your fighter",
-                        labelText: "Figher A"),
+                        hintText: "ENTER YOUR FIGHTER",
+                        labelText: "FIGHTER A",
+                        hintStyle: stil),
                     //autofillHints: names,
                   ),
                   width: 400,
-                  height: 100,
+                  height: 200,
                 ),
                 Container(
                     padding: EdgeInsets.only(top: 150),
@@ -68,7 +82,7 @@ class FirstPage extends StatelessWidget {
                       },
                       child: Text(
                         'Rumble',
-                        style: TextStyle(fontSize: 20),
+                        style: stil_2,
                       ),
                     )),
                 Container(
@@ -89,7 +103,7 @@ class FirstPage extends StatelessWidget {
                     },
                     child: Text(
                       'Ranking',
-                      style: TextStyle(fontSize: 20),
+                      style: stil_2,
                     ),
                   ),
                 ),
@@ -105,12 +119,13 @@ class FirstPage extends StatelessWidget {
                     autofocus: false,
                     decoration: InputDecoration(
                         icon: Icon(Icons.people),
-                        hintText: "Enter your fighter",
-                        labelText: "Figher B"),
+                        hintText: "ENTER YOUR FIGHTER",
+                        labelText: "FIGHTER B",
+                        hintStyle: stil),
                     //autofillHints: names,
                   ),
                   width: 400,
-                  height: 100,
+                  height: 200,
                 ),
                 Container(
                     padding: EdgeInsets.only(top: 150),
