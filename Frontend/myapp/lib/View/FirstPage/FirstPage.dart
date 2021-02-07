@@ -20,6 +20,7 @@ class FirstPage extends StatelessWidget {
               children: [
                 //name
                 Container(
+                  padding: EdgeInsets.only(top: 150),
                   child: TextFormField(
                     controller: TextEditingController(),
                     autofocus: false,
@@ -33,7 +34,7 @@ class FirstPage extends StatelessWidget {
                   height: 100,
                 ),
                 Container(
-                    padding: EdgeInsets.only(top: 200),
+                    padding: EdgeInsets.only(top: 150),
                     child: Image.asset(
                       'assets/images/randy.png',
                       scale: 3,
@@ -55,6 +56,9 @@ class FirstPage extends StatelessWidget {
                         onPrimary: Colors.white,
                         shadowColor: Colors.red,
                         elevation: 7,
+                        shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(25))),
                       ),
                       onPressed: () {
                         Navigator.push(
@@ -76,6 +80,8 @@ class FirstPage extends StatelessWidget {
                       onPrimary: Colors.white,
                       shadowColor: Colors.red,
                       elevation: 7,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(25))),
                     ),
                     onPressed: () {
                       Navigator.push(context,
@@ -93,6 +99,7 @@ class FirstPage extends StatelessWidget {
               children: [
                 //name
                 Container(
+                  padding: EdgeInsets.only(top: 150),
                   child: TextFormField(
                     controller: TextEditingController(),
                     autofocus: false,
@@ -106,7 +113,7 @@ class FirstPage extends StatelessWidget {
                   height: 100,
                 ),
                 Container(
-                    padding: EdgeInsets.only(top: 200),
+                    padding: EdgeInsets.only(top: 150),
                     child: Image.asset(
                       'assets/images/randy.png',
                       scale: 3,
