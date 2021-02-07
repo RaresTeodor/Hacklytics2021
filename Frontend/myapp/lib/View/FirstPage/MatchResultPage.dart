@@ -12,7 +12,7 @@ class MatchResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      color: Colors.blueGrey,
+      color: Colors.white10,
       child: Container(
         child: Column(
           children: [
@@ -29,14 +29,22 @@ class MatchResultPage extends StatelessWidget {
                           child: Text('Simulate another fight', style: stil)),
                     ),
                     Container(
-                      child: TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Ranking()));
-                          },
-                          child: Text("Ranking", style: stil)),
+                      child: Padding(
+                          padding: EdgeInsets.only(left: 150.0, right: 0.0),
+                          child: RaisedButton(
+                            textColor: Colors.white,
+                            color: Colors.black,
+                            child: Text("Ranking"),
+                            shape: new RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(30.0),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Ranking()));
+                            },
+                          )),
                     )
                   ],
                 )),

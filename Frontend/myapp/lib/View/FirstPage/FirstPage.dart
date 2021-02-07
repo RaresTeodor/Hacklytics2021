@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'MatchResultPage.dart';
+import 'Ranking.dart';
 
 class FirstPage extends StatelessWidget {
   @override
@@ -57,10 +58,8 @@ class FirstPage extends StatelessWidget {
                 Container(
                     child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => MatchResultPage()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Ranking()));
                   },
                   child: Text('Ranking'),
                 ))
