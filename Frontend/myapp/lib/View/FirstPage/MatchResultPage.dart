@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'Ranking.dart';
+import 'MatchResultTable.dart';
 
 class MatchResultPage extends StatelessWidget {
+  var stil = TextStyle(
+      color: Colors.black,
+      fontWeight: FontWeight.w800,
+      fontFamily: 'Roboto',
+      letterSpacing: 0.5,
+      fontSize: 20);
   @override
   Widget build(BuildContext context) {
     return new Container(
@@ -8,69 +16,56 @@ class MatchResultPage extends StatelessWidget {
       child: Center(
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Container(
-                  child: TextButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: Text(
-                        'Simulate another fight',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w800,
-                          fontFamily: 'Roboto',
-                          letterSpacing: 0.5,
-                          fontSize: 20,
-                        ),
-                      )),
-                ),
-                Container(
-                  child: TextButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: Text("Ranking")),
-                )
-              ],
-            ),
-            Text(
-              "Winner",
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w800,
-                fontFamily: 'Roboto',
-                letterSpacing: 0.5,
-                fontSize: 20,
+            Container(
+                padding: EdgeInsets.all(50),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Container(
+                      child: TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: Text('Simulate another fight', style: stil)),
+                    ),
+                    Container(
+                      child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Ranking()));
+                          },
+                          child: Text("Ranking", style: stil)),
+                    )
+                  ],
+                )),
+            Container(
+              child: Image.asset(
+                'assets/winner.png',
+                scale: 1.5,
               ),
             ),
-            Row(
+            Container(
+                child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Column(
                   children: [
-                    Text(
-                      "Randy Orton",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w800,
-                        fontFamily: 'Roboto',
-                        letterSpacing: 0.5,
-                        fontSize: 20,
-                      ),
+                    Container(
+                      padding: EdgeInsets.only(top: 50),
+                      child: Text("Randy Orton", style: stil),
                     ),
-                    Image(
-                      image: AssetImage('assets/randy.png'),
-                    ),
+                    Container(
+                        margin: EdgeInsets.all(30),
+                        padding: EdgeInsets.only(right: 100),
+                        child:
+                            Image.asset('assets/images/randy.png', scale: 3.0))
                   ],
                 ),
-                Column(
-                  children: [],
-                ),
+                Column()
               ],
-            ),
+            )),
           ],
         ),
       ),
