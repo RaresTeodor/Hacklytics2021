@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'Ranking.dart';
 
 class MatchResultPage extends StatelessWidget {

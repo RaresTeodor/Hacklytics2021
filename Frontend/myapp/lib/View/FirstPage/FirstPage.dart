@@ -33,36 +33,60 @@ class FirstPage extends StatelessWidget {
                   height: 100,
                 ),
                 Container(
+                    padding: EdgeInsets.only(top: 200),
                     child: Image.asset(
-                  'assets/images/randy.png',
-                  scale: 3,
-                ))
+                      'assets/images/randy.png',
+                      scale: 3,
+                    ))
               ],
             ),
             Column(
               children: [
                 Container(
                     padding: EdgeInsets.only(bottom: 50),
-                    child: Image.asset('assets/ufclogo.png')),
+                    child: Image.asset('assets/ufclogo.png', scale: 1.5)),
                 Container(
                     margin: EdgeInsets.only(bottom: 50),
+                    width: 100.0,
+                    height: 50.0,
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.black,
+                        onPrimary: Colors.white,
+                        shadowColor: Colors.red,
+                        elevation: 7,
+                      ),
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => MatchResultPage()));
                       },
-                      child: Text('Rumble'),
+                      child: Text(
+                        'Rumble',
+                        style: TextStyle(fontSize: 20),
+                      ),
                     )),
                 Container(
-                    child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Ranking()));
-                  },
-                  child: Text('Ranking'),
-                ))
+                  width: 100.0,
+                  height: 50.0,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.black,
+                      onPrimary: Colors.white,
+                      shadowColor: Colors.red,
+                      elevation: 7,
+                    ),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Ranking()));
+                    },
+                    child: Text(
+                      'Ranking',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+                ),
               ],
             ),
             Column(
@@ -82,7 +106,7 @@ class FirstPage extends StatelessWidget {
                   height: 100,
                 ),
                 Container(
-                    padding: EdgeInsets.only(top: 50),
+                    padding: EdgeInsets.only(top: 200),
                     child: Image.asset(
                       'assets/images/randy.png',
                       scale: 3,
